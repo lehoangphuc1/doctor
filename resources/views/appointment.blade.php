@@ -35,7 +35,7 @@
             @endif
             
            
-            <form action="" method="post">@csrf
+            <form action="{{route('booking.appointment')}}" method="post">@csrf
             <div class="card">
                 <div class="card-header lead">{{$date}}</div>
                 <div class="card-body">
@@ -48,14 +48,9 @@
                                     </span>
                             </label>
                         </div>
-                        <input type="hidden" name="doctorId" value="{{$doctor_id}}">
+                        <input type="hidden" name="doctorId" value="{{$doctor_id}}"> <!--khai bao hidden de lay ra create vao bang booking-->
                         <input type="hidden" name="appointmentId" value
-                        ="{{$time->appointment_id}}">
-                        <input type="hidden" name="date" value
-                        ="{{$date}}">
-
-
-
+                        ="{{$time->appointment_id}}"> <input type="hidden" name="date" value ="{{$date}}"> <!--khai bao hidden de lay ra update time-->
                         
                         
                         @endforeach

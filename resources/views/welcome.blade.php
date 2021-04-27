@@ -25,6 +25,8 @@
     <hr>
     <!--search doctors-->
     <div class="card">
+      <form action="{{url('/')}}" method="GET">
+        @csrf
         <div class="card-body">
             <div class="card-header">Find Doctors</div>
             <div class="card-body">
@@ -38,6 +40,7 @@
                </div>
             </div>
         </div>
+        </form>
     </div>
 
     <!--display doctors-->

@@ -34,7 +34,7 @@ class DoctorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $rq)
+    public function storeDoctor(Request $rq)
     {
        $this->validateStore($rq);
         $data = $rq->all();

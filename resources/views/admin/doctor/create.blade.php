@@ -36,7 +36,7 @@
 		<div class="card">
 			<div class="card-header"><h3>Add doctor</h3></div>
 			<div class="card-body">
-				<form class="forms-sample" action="{{route('doctor.store')}}" method="post" enctype="multipart/form-data" >
+				<form class="forms-sample" action="{{route('doctor.save')}}" method="post" enctype="multipart/form-data" >
 					@csrf
 					<div class="row">
 						<div class="col-lg-6">

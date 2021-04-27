@@ -44,6 +44,11 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        @if(auth()->check()&& auth()->user()->role->name === 'patient')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('my.booking') }}" style="color: #fff; font-size:16px; font-weight: bold;">{{ __('My Booking') }}</a>
+                            </li>
+                        @endif
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -89,11 +94,36 @@ body{
     width: 400px;
     height: 300px;
 }        
+    label.btn{
+        padding: 0;
+    }
+    label.btn input{
+        opacity: 0; 
+        position: absolute;
+    }
+    label.btn span{
+        text-align: center; 
+        padding: 6px 12px; 
+        display: block;
+        min-width: 80px;
+    }
+    label.btn input:checked+span{
+        background-color: rgb(80,110,228); 
+        color: #fff;
+    }
+   
 </style>
 <script>
+var dateToday = new Date();
   $( function() {
-    $( "#datepicker" ).datepicker({dateFormat:"yy-mm-dd"}).val();
-  } );
-</script>
+    $("#datepicker").datepicker({
+        dateFormat:"yy-mm-dd",
+        showButtonPanel:true,
+        numberOfMonths:2,
+        minDate:dateToday,
+    });
+});
+
+  </script>
 </body>
 </html>
